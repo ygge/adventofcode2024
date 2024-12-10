@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Day9 {
 
-
     public static void main(String[] args) {
         var input = Util.readString();
         Util.submitPart1(part1(input));
