@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Day20 {
 
-    private static final int SAVED_TURNS = 50;
+    private static final int SAVED_TURNS = 100;
 
     public static void main(String[] args) {
         Util.verifySubmission();
@@ -23,17 +23,11 @@ public class Day20 {
         Map<Integer, Integer> saved = new HashMap<>();
         for (int i = 0; i < path.size() - 1; i++) {
             for (int j = i + SAVED_TURNS; j < path.size(); ++j) {
-                int len = findCheat(board, path.get(i), path.get(j));
+                int len = path.get(i).dist(path.get(j));
                 if (len <= 20 && j - i - len >= SAVED_TURNS) {
-                    saved.put(j - i - len, saved.getOrDefault(j - i - len, 0) + 1);
                     ++count;
                 }
             }
-        }
-        var list = new ArrayList<>(saved.keySet());
-        Collections.sort(list);
-        for (int k : list) {
-            System.out.println(saved.get(k) + " " + k);
         }
         return count;
     }
