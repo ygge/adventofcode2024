@@ -9,9 +9,8 @@ public class Day20 {
     private static final int SAVED_TURNS = 100;
 
     public static void main(String[] args) {
-        Util.verifySubmission();
         var input = Util.readBoard();
-        //Util.submitPart1(part1(input));
+        Util.submitPart1(part1(input));
         Util.submitPart2(part2(input));
     }
 

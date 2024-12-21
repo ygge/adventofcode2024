@@ -1,16 +1,18 @@
 package util;
 
 public enum Direction {
-    UP(-1, 0),
-    LEFT(0, -1),
-    DOWN(1, 0),
-    RIGHT(0, 1);
+    UP(-1, 0, '^'),
+    LEFT(0, -1, '<'),
+    DOWN(1, 0, 'v'),
+    RIGHT(0, 1, '>');
 
     public final int dy, dx;
+    public final char c;
 
-    Direction(int dy, int dx) {
+    Direction(int dy, int dx, char c) {
         this.dy = dy;
         this.dx = dx;
+        this.c = c;
     }
 
     public Direction turnLeft() {
